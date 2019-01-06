@@ -4,5 +4,5 @@
 #
 # @example
 #   include autofs::config
-class autofs::config {
+class autofs::config inherits autofs {
 }

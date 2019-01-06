@@ -17,13 +17,10 @@ class autofs (
 
 ) inherits autofs::params {
 
-  class{'autofs::install': }
-  -> class{'autofs::config': }
-  ~> class{'autofs::service': }
-  -> Class['autofs']
+  include autofs::install
+  include autofs::config
+  include autofs::service
 
-  # TODO: Check how to validate class parameter inputs.
-  # ===================================================
-  #validate_re($autofs_service_ensure, [ '^running$', '^stopped$' ])
-  #validate_re($autofs_config_test, [ '^hello$' ])
+  validate_re($autofs_service_ensure, [ '^running$', '^stopped$' ])
+  validate_re($autofs_config_test, [ '^hello$' ])
 }

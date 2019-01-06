@@ -6,14 +6,15 @@ describe 'autofs::service' do
       let(:facts) { os_facts }
 
       it { is_expected.to compile.with_all_deps }
-      it { is_expected.to contain_service('autofs')
-        .with(
-          :ensure => 'running',
-          :enable => true,
+
+      it { is_expected.to contain_class('autofs::service') }
+
+      it do
+        is_expected.to contain_service('autofs').with(
+          'ensure' => 'running',
+          'enable' => true,
         )
-      }
-
-
+      end
     end
   end
 end

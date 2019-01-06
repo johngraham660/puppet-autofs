@@ -4,7 +4,7 @@
 #
 # @example
 #   include autofs::install
-class autofs::install {
+class autofs::install inherits autofs {
 
   package { 'autofs':
     ensure => 'present',

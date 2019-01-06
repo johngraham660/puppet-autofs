@@ -4,7 +4,7 @@
 #
 # @example
 #   include autofs::service
-class autofs::service {
+class autofs::service  inherits autofs {
 
   service {'autofs':
     ensure => 'running',
