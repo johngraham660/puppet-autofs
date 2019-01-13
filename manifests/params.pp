@@ -5,7 +5,4 @@
 # @example
 #   include autofs::params
 class autofs::params {
-  $autofs_service_enable  = true
-  $autofs_service_ensure  = 'running'
-  $autofs_config_test     = 'hello'
 }

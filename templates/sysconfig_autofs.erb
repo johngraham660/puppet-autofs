@@ -1,0 +1,14 @@
+# ==========================================
+# Puppet managed file - Do not edit manually
+# ==========================================
+
+TIMEOUT=<%= scope['autofs::autofs_config_timeout'] %>
+BROWSE_MODE="<%= scope['autofs::autofs_config_browse_mode'] %>"
+LOGGING="<%= scope['autofs::autofs_config_logging'] %>"
+MAP_OBJECT_CLASS="<%= scope['autofs::autofs_config_map_object_class'] %>"
+ENTRY_OBJECT_CLASS="<%= scope['autofs::autofs_config_entry_object_class'] %>"
+MAP_ATTRIBUTE="<%= scope['autofs::autofs_config_map_attribute'] %>"
+ENTRY_ATTRIBUTE="<%= scope['autofs::autofs_config_entry_attribute'] %>"
+VALUE_ATTRIBUTE="<%= scope['autofs::autofs_config_value_attribute'] %>"
+AUTH_CONF_FILE="<%= scope['autofs::autofs_config_auth_conf_file'] %>"
+USE_MISC_DEVICE="<%= scope['autofs::autofs_config_use_misc_device'] %>"
