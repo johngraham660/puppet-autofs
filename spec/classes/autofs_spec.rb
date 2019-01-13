@@ -6,7 +6,6 @@ describe 'autofs' do
       let(:facts) { os_facts }
 
       it { is_expected.to compile.with_all_deps }
-
       it { is_expected.to contain_class('autofs') }
     end
   end
