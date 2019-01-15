@@ -63,7 +63,6 @@ describe 'autofs::config' do
       end
 
       it { is_expected.to contain_file('/etc/sysconfig/autofs').that_requires(['File[/etc/sysconfig]', 'Package[autofs]']) }
-
     end
   end
 end
