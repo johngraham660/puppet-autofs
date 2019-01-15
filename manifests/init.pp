@@ -28,7 +28,7 @@ class autofs (
   Enum['yes', 'no'] $autofs_config_usetls,
   Enum['yes', 'no'] $autofs_config_tlsrequired,
   Enum['yes', 'no', 'autodetect', 'simple'] $autofs_config_authrequired,
-  Enum['gssapi', 'login', 'plain', 'anonymous', 'digest-md5', 'external'] $autofs_config_authtype,
+  Enum['GSSAPI', 'LOGIN', 'PLAIN', 'ANONYMOUS', 'DIGEST-MD5', 'EXTERNEL'] $autofs_config_authtype,
   String[1] $autofs_config_user,
   String[1] $autofs_config_secret,
   Integer $autofs_config_timeout,
