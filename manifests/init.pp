@@ -1,6 +1,7 @@
 # ============================================================
 # A class to manage the automounter services on a Linux client
 # ============================================================
+# TODO: Add documentation for class parameters
 # @param autofs_service_enable
 # @param autofs_service_ensure
 # @param autofs_config_test
@@ -42,7 +43,7 @@ class autofs (
   String[1] $autofs_config_auth_conf_file,
   Enum['yes', 'no'] $autofs_config_use_misc_device,
 
-) inherits autofs::params {
+) {
 
   include autofs::install
   include autofs::config
