@@ -50,8 +50,6 @@ describe 'autofs::config' do
         )
       end
 
-      it { is_expected.to contain_file('/etc/autofs_ldap_auth.conf').that_requires(['Package[autofs]']) }
-
       it do
         is_expected.to contain_file('/etc/sysconfig/autofs').with(
           'ensure' => 'file',
@@ -62,7 +60,26 @@ describe 'autofs::config' do
         )
       end
 
+      it do
+        is_expected.to contain_file('/etc/auto.master').with(
+          'ensure' => 'file',
+          'path' => '/etc/auto.master',
+          'owner' => 'root',
+          'group' => 'root',
+          'mode' => '0644',
+          'source' => 'puppet:///modules/autofs/auto.master',
+        )
+      end
+
+      # test resource dependencies
+      it { is_expected.to contain_file('/etc/autofs_ldap_auth.conf').that_requires(['Package[autofs]']) }
       it { is_expected.to contain_file('/etc/sysconfig/autofs').that_requires(['File[/etc/sysconfig]', 'Package[autofs]']) }
+      it { is_expected.to contain_file('/etc/auto.master').that_requires(['Package[autofs]']) }
+
+      # test resource notifications
+      it { is_expected.to contain_file('/etc/autofs_ldap_auth.conf').that_notifies(['Service[autofs]']) }
+      it { is_expected.to contain_file('/etc/sysconfig/autofs').that_notifies(['Service[autofs]']) }
+      it { is_expected.to contain_file('/etc/auto.master').that_notifies(['Service[autofs]']) }
     end
   end
 end

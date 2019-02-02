@@ -8,6 +8,12 @@ describe 'autofs::install' do
       it { is_expected.to compile.with_all_deps }
 
       it { is_expected.to contain_class('autofs::install') }
+
+      it do
+        is_expected.to contain_package('autofs').with(
+          'ensure' => 'present',
+        )
+      end
     end
   end
 end
