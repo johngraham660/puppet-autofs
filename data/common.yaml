@@ -1,1 +1,19 @@
 ---
+autofs::autofs_service_enable: true
+autofs::autofs_service_ensure: 'running'
+autofs::autofs_config_usetls: 'yes'
+autofs::autofs_config_tlsrequired: 'no'
+autofs::autofs_config_authrequired: 'simple'
+autofs::autofs_config_authtype: 'PLAIN'
+autofs::autofs_config_user: 'cn=proxyAgent,ou=profile,dc=virtua,dc=com'
+autofs::autofs_config_secret: 'pr0xyLDAP'
+autofs::autofs_config_timeout: 300
+autofs::autofs_config_browse_mode: 'no'
+autofs::autofs_config_logging: 'none'
+autofs::autofs_config_map_object_class: 'automountMap'
+autofs::autofs_config_entry_object_class: 'automount'
+autofs::autofs_config_map_attribute: 'automountMapName'
+autofs::autofs_config_entry_attribute: 'automountKey'
+autofs::autofs_config_value_attribute: 'automountInformation'
+autofs::autofs_config_auth_conf_file: '/etc/autofs_ldap_auth.conf'
+autofs::autofs_config_use_misc_device: 'yes'
